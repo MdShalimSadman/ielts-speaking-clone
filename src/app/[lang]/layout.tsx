@@ -1,18 +1,23 @@
-import { NextIntlClientProvider} from "next-intl";
+import { ReactNode } from "react";
+
+import { NextIntlClientProvider } from "next-intl";
+import QueryProvider from "@/providers/queryProvider";
 import "../globals.css";
 
 export default async function RootLayout({
   children,
   params,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <QueryProvider>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </QueryProvider>
       </body>
     </html>
   );
