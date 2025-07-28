@@ -51,6 +51,8 @@ export interface ISectionValue {
     icon:string;
     title:string;
     subtitle:string;
+    checklist: string[];
+    file_url:string;
   }
   
   export interface Section {

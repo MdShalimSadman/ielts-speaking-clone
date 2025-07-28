@@ -4,14 +4,15 @@ import { useTranslations, useLocale } from "next-intl";
 import { useQuery } from "@tanstack/react-query";
 import { getIeltsCourse } from "@/services/api/ieltsCourse.api";
 import Image from "next/image";
-import Gallery from "@/components/screens/trailer/Gallery";
+import Gallery from "@/components/screens/trailer-card/Gallery";
 import { Button } from "@/components/ui/button";
-import ChecklistSection from "@/components/screens/trailer/CheckListSection";
+import ChecklistSection from "@/components/screens/trailer-card/CheckListSection";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import FeatureCard from "@/components/screens/FeatureCard";
 import WhatYouWillLearn from "@/components/screens/WhatYouWillLearn";
 import CourseDetailsAccordion from "@/components/screens/courseDetailAccordion";
+import ExclusiveFeatureCard from "@/components/screens/ExclusiveFeatureCard";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -167,6 +168,25 @@ export default function HomePage() {
             sections={data?.data.data.sections || []}
             title={t("what_to_learn")}
           />
+          {/* Course Exclusive Feature */}
+          <div className="flex flex-col gap-3 my-10">
+            <h2 className="text-xl font-semibold leading-7">
+              {t("exclusive_feature")}
+            </h2>
+            <div className="grid grid-cols-1 px-5 border border-[#E1DBEB] divide-y divide-[#E1DBEB] rounded-md">
+              {data?.data.data.sections
+                ?.find((section) => section.name === "Course Exclusive Feature")
+                ?.values.map((item, idx) => (
+                  <ExclusiveFeatureCard
+                    key={item.id || idx}
+                    title={item.title}
+                    checklist={item.checklist}
+                    imageUrl={item.file_url}
+                  />
+                ))}
+            </div>
+          </div>
+
           {/* Course Details  */}
           <div className="mb-6 md:mb-10 mt-4 max-w-[900px] md:mt-10 ">
             <h2 className="text-xl font-semibold md:mb-4 md:text-2xl">
