@@ -1,23 +1,101 @@
 "use client";
 
-import { useTranslations, useLocale  } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import { useQuery } from "@tanstack/react-query";
 import { getIeltsCourse } from "@/services/api/ieltsCourse.api";
+import Image from "next/image";
+import { PlayCircle } from "lucide-react";
+import PlayIcon from "@/components/icons/PlayIcon";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
   const locale = useLocale();
-  
+  const [play, setPlay] = useState(false);
+
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["ielts-course",locale],
+    queryKey: ["ielts-course", locale],
     queryFn: () => getIeltsCourse(locale),
   });
 
   return (
-    <div>
-      <h1>{t("title")}</h1>
-      <Link href="/about">{t("about")}</Link>
+    <div
+      className="min-h-[300px] md:min-h-[300px] bg-cover bg-center"
+      style={{
+        backgroundImage:
+          'url("https://cdn.10minuteschool.com/images/ui_(1)_1716445506383.jpeg")',
+      }}
+    >
+      <div className="container relative flex flex-col gap-4 md:flex-row md:gap-12 pb-6 md:py-10 min-h-[300px] mx-auto">
+        {/* left portion  */}
+        <div className="order-1 flex flex-col justify-center flex-1 md:order-1  md:max-w-[calc(100%_-_348px)] lg:max-w-[calc(100%_-_448px)]">
+          <h1 className="text-white mb-2 text-xl font-semibold  md:text-4xl">
+            {data?.data.data.title || ""}
+          </h1>
+          <div className="mb-2">
+            <button className="flex flex-row flex-wrap gap-2 text-white">
+              <span className="inline-block">
+                <Image
+                  src="https://cdn.10minuteschool.com/images/Dev_Handoff_Q1_24_Frame_2_1725444418666.png"
+                  priority
+                  alt="ratings"
+                  width={130}
+                  height={100}
+                />
+              </span>
+              <span className="inline-block text-sm md:text-base">
+                {t("ratings")}
+              </span>
+            </button>
+          </div>
+          <div
+            className="text-gray-400 text-base"
+            dangerouslySetInnerHTML={{
+              __html: data?.data.data.description || "",
+            }}
+          />
+        </div>
+
+        {/* right portion  */}
+        <div className="w-full md:max-w-[330px] lg:max-w-[400px] order-2 bg-white absolute right-0 md:top-12 md:absolute">
+          <div className="md:sticky md:top-28">
+            <div className="md:border">
+              <div className="hidden p-1 md:block ">
+                <div className="relative w-full h-52">
+                {!play ? (
+                  <div
+                    className="relative w-full h-full cursor-pointer"
+                    onClick={() => setPlay(true)}
+                  >
+                    <Image
+                      src="https://cdn.10minuteschool.com/images/thumbnails/IELTS_new_16_9.png"
+                      alt="thumbnail"
+                      fill
+                      className="object-cover rounded"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 rounded">
+                      {/* <PlayCircle className="w-16 h-16 text-white" /> */}
+                      <PlayIcon/>
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/zrlYnaZftEQ?autoplay=1"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="rounded"
+                  ></iframe>
+                )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
