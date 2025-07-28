@@ -8,9 +8,10 @@ import Gallery from "@/components/screens/trailer/Gallery";
 import { Button } from "@/components/ui/button";
 import ChecklistSection from "@/components/screens/trailer/CheckListSection";
 import Link from "next/link";
-import {ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import FeatureCard from "@/components/screens/FeatureCard";
 import WhatYouWillLearn from "@/components/screens/WhatYouWillLearn";
+import CourseDetailsAccordion from "@/components/screens/courseDetailAccordion";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -163,9 +164,28 @@ export default function HomePage() {
           </div>
           {/* what you will learn */}
           <WhatYouWillLearn
-  sections={data?.data.data.sections || []}
-  title={t("what_to_learn")}
-/>
+            sections={data?.data.data.sections || []}
+            title={t("what_to_learn")}
+          />
+          {/* Course Details  */}
+          <div className="mb-6 md:mb-10 mt-4 max-w-[900px] md:mt-10 ">
+            <h2 className="text-xl font-semibold md:mb-4 md:text-2xl">
+              {t("course_details")}
+            </h2>
+            <div className="rounded-lg py-2 md:border md:border-[#E1DBEB] md:px-5 ">
+              {data?.data.data.sections?.find(
+                (section) => section.name === "Course details"
+              )?.values && (
+                <CourseDetailsAccordion
+                  details={
+                    data.data.data.sections.find(
+                      (section) => section.name === "Course details"
+                    )?.values || []
+                  }
+                />
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </>
