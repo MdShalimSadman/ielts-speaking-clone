@@ -24,6 +24,14 @@ const HomeIndex = () => {
 
   return (
     <>
+     <div
+    className="min-h-[300px] md:min-h-[300px] bg-cover bg-center"
+    style={{
+      backgroundImage:
+        'url("https://cdn.10minuteschool.com/images/ui_(1)_1716445506383.jpeg")',
+    }}
+  >
+      <div className="container relative flex flex-col gap-4 md:flex-row md:gap-12 pb-6 md:py-10 min-h-[300px] mx-auto text-[#111827]">
       <HeroBanner
         title={course?.title || ""}
         description={course?.description || ""}
@@ -35,6 +43,8 @@ const HomeIndex = () => {
         checklist={course?.checklist || []}
         ctaText={course?.cta_text.name || ""}
       />
+      </div>
+      </div>
       <div className="container flex flex-col gap-4 md:flex-row md:gap-12 mx-auto text-[#111827]">
         <div className="order-2 flex-1 md:order-1 md:max-w-[calc(100%_-_348px)] lg:max-w-[calc(100%_-_448px)]">
           <InstructorSection

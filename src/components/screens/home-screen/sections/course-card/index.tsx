@@ -10,7 +10,7 @@ type Props = {
 };
 
 const CourseIndex = ({ galleryItems, checklist, ctaText }: Props) => (
-  <div className="w-full md:max-w-[330px] lg:max-w-[400px] order-2 bg-white absolute right-0 md:top-12 md:absolute">
+  <div className="w-full md:max-w-[330px] lg:max-w-[400px] order-2 bg-white absolute right-0 md:top-[50px] md:absolute">
     <div className="md:sticky md:top-28">
       <div className="md:border border-[#E1DBEB]">
         <div className="hidden p-1 md:block">
