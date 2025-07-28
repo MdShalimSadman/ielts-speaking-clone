@@ -5,8 +5,8 @@ import { useTranslations, useLocale } from "next-intl";
 import { useQuery } from "@tanstack/react-query";
 import { getIeltsCourse } from "@/services/api/ieltsCourse.api";
 import Image from "next/image";
-import { PlayCircle } from "lucide-react";
 import PlayIcon from "@/components/icons/PlayIcon";
+import Gallery from "@/components/screens/trailer/Gallery";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -61,35 +61,14 @@ export default function HomePage() {
           <div className="md:sticky md:top-28">
             <div className="md:border">
               <div className="hidden p-1 md:block ">
-                <div className="relative w-full h-52">
-                {!play ? (
-                  <div
-                    className="relative w-full h-full cursor-pointer"
-                    onClick={() => setPlay(true)}
-                  >
-                    <Image
-                      src="https://cdn.10minuteschool.com/images/thumbnails/IELTS_new_16_9.png"
-                      alt="thumbnail"
-                      fill
-                      className="object-cover rounded"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 rounded">
-                      {/* <PlayCircle className="w-16 h-16 text-white" /> */}
-                      <PlayIcon/>
-                    </div>
-                  </div>
-                ) : (
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/zrlYnaZftEQ?autoplay=1"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="rounded"
-                  ></iframe>
-                )}
+                <div>
+                  <Gallery
+                    galleryItems={
+                      data?.data.data.media?.filter(
+                        (item) => item.name === "preview_gallery"
+                      ) || []
+                    }
+                  />
                 </div>
               </div>
             </div>
