@@ -8,8 +8,9 @@ import Gallery from "@/components/screens/trailer/Gallery";
 import { Button } from "@/components/ui/button";
 import ChecklistSection from "@/components/screens/trailer/CheckListSection";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import {ChevronRight } from "lucide-react";
 import FeatureCard from "@/components/screens/FeatureCard";
+import WhatYouWillLearn from "@/components/screens/WhatYouWillLearn";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -160,6 +161,11 @@ export default function HomePage() {
                 ))}
             </div>
           </div>
+          {/* what you will learn */}
+          <WhatYouWillLearn
+  sections={data?.data.data.sections || []}
+  title={t("what_to_learn")}
+/>
         </div>
       </div>
     </>
