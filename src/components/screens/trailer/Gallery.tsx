@@ -102,6 +102,7 @@ const Gallery = ({ galleryItems }: { galleryItems: Medium[] }) => {
         {galleryItems.map((item, index) => (
           <div
             key={index}
+            role="button"
             className={` w-20 h-12 relative cursor-pointer border-2 rounded ${
               currentIndex === index ? "border-green-500" : "border-transparent"
             }`}

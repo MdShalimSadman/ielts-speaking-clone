@@ -48,6 +48,9 @@ export interface ISectionValue {
     text: string;
     name:string;
     description:string;
+    icon:string;
+    title:string;
+    subtitle:string;
   }
   
   export interface Section {

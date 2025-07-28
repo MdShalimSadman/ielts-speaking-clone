@@ -1,19 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useQuery } from "@tanstack/react-query";
 import { getIeltsCourse } from "@/services/api/ieltsCourse.api";
 import Image from "next/image";
-import PlayIcon from "@/components/icons/PlayIcon";
 import Gallery from "@/components/screens/trailer/Gallery";
 import { Button } from "@/components/ui/button";
 import ChecklistSection from "@/components/screens/trailer/CheckListSection";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import FeatureCard from "@/components/screens/FeatureCard";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
   const locale = useLocale();
-  const [play, setPlay] = useState(false);
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["ielts-course", locale],
@@ -76,7 +76,7 @@ export default function HomePage() {
                 </div>
                 <div className="hidden md:block w-full p-4">
                   <p className="text-2xl font-semibold md:mb-3">৳1000</p>
-                  <Button className="md:w-full bg-[#1cab55] text-white whitespace-nowrap">
+                  <Button className="md:w-full bg-[#1cab55] text-white whitespace-nowrap cursor-pointer">
                     {data?.data.data.cta_text.name}
                   </Button>
                 </div>
@@ -113,7 +113,23 @@ export default function HomePage() {
                     className="rounded-full"
                   />
                   <div>
-                    <h3 className="text-lg font-medium">{instructor.name}</h3>
+                    <h3 className="text-lg font-medium">
+                      <Link
+                        href="https://10minuteschool.com/skills/instructors/munzereen-shahid/"
+                        className="inline-flex items-center group"
+                      >
+                        {/* Name */}
+                        <span className="group-hover:text-green-500 transition-colors">
+                          {instructor.name}
+                        </span>
+
+                        {/* Arrow icon */}
+                        <ChevronRight
+                          size={18}
+                          className="ml-1 text-gray-600 transition-colors"
+                        />
+                      </Link>
+                    </h3>
                     <div
                       className="text-sm"
                       dangerouslySetInnerHTML={{
@@ -123,6 +139,26 @@ export default function HomePage() {
                   </div>
                 </div>
               ))}
+          </div>
+          {/* how the course is laid out  */}
+          <div>
+            <h2 className="mb-3  text-xl font-semibold leading-[30px]">
+              {t("laid_out")}
+            </h2>
+            <div className="mb-16 grid grid-cols-1 gap-4 rounded-md border bg-[#111827] p-6 md:grid-cols-2 md:gap-8">
+              {data?.data.data.sections
+                ?.find(
+                  (section) => section.name === "How the course is laid out"
+                )
+                ?.values.map((item) => (
+                  <FeatureCard
+                    key={item.id}
+                    icon={item.icon}
+                    title={item.title}
+                    subtitle={item.subtitle}
+                  />
+                ))}
+            </div>
           </div>
         </div>
       </div>

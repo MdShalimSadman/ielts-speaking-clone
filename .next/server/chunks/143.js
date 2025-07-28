@@ -1,1 +1,1 @@
-"use strict";exports.id=143,exports.ids=[143],exports.modules={7143:a=>{a.exports=JSON.parse('{"HomePage":{"ratings":"(81.8% শিক্ষার্থী কোর্স শেষে ৫ রেটিং দিয়েছেন)"}}')}};
+"use strict";exports.id=143,exports.ids=[143],exports.modules={17143:a=>{a.exports=JSON.parse('{"HomePage":{"instructor":"কোর্স ইন্সট্রাক্টর","laid_out":"কোর্সটি যেভাবে সাজানো হয়েছে"}}')}};

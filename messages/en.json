@@ -1,5 +1,6 @@
 {
   "HomePage": {
-    "instructor":"Course instructor"
+    "instructor":"Course instructor",
+    "laid_out":"How the course is laid out"
   }
 }
