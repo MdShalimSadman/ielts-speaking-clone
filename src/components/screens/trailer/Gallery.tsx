@@ -93,8 +93,8 @@ const Gallery = ({ galleryItems }: { galleryItems: Medium[] }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="cursor-pointer !border-none left-2.5"/>
-        <CarouselNext className="cursor-pointer !border-none right-2.5"/>
+        <CarouselPrevious className="cursor-pointer !border-none left-2.5" />
+        <CarouselNext className="cursor-pointer !border-none right-2.5" />
       </Carousel>
 
       {/* Thumbnail navigation */}

@@ -7,6 +7,8 @@ import { getIeltsCourse } from "@/services/api/ieltsCourse.api";
 import Image from "next/image";
 import PlayIcon from "@/components/icons/PlayIcon";
 import Gallery from "@/components/screens/trailer/Gallery";
+import { Button } from "@/components/ui/button";
+import ChecklistSection from "@/components/screens/trailer/CheckListSection";
 
 export default function HomePage() {
   const t = useTranslations("HomePage");
@@ -26,7 +28,7 @@ export default function HomePage() {
           'url("https://cdn.10minuteschool.com/images/ui_(1)_1716445506383.jpeg")',
       }}
     >
-      <div className="container relative flex flex-col gap-4 md:flex-row md:gap-12 pb-6 md:py-10 min-h-[300px] mx-auto">
+      <div className="container relative flex flex-col gap-4 md:flex-row md:gap-12 pb-6 md:py-10 min-h-[300px] mx-auto text-[#111827]">
         {/* left portion  */}
         <div className="order-1 flex flex-col justify-center flex-1 md:order-1  md:max-w-[calc(100%_-_348px)] lg:max-w-[calc(100%_-_448px)]">
           <h1 className="text-white mb-2 text-xl font-semibold  md:text-4xl">
@@ -59,7 +61,7 @@ export default function HomePage() {
         {/* right portion  */}
         <div className="w-full md:max-w-[330px] lg:max-w-[400px] order-2 bg-white absolute right-0 md:top-12 md:absolute">
           <div className="md:sticky md:top-28">
-            <div className="md:border">
+            <div className="md:border border-[#E1DBEB]">
               <div className="hidden p-1 md:block ">
                 <div>
                   <Gallery
@@ -71,6 +73,17 @@ export default function HomePage() {
                   />
                 </div>
               </div>
+              <div className="hidden md:block w-full p-4">
+                <p className="text-2xl font-semibold md:mb-3">৳1000</p>
+                <Button className="md:w-full bg-[#1cab55] text-white whitespace-nowrap">
+                  {data?.data.data.cta_text.name}
+                </Button>
+              </div>
+              {data?.data.data.checklist && (
+                <div className="hidden md:block">
+                  <ChecklistSection checklist={data.data.data.checklist} />
+                </div>
+              )}
             </div>
           </div>
         </div>
