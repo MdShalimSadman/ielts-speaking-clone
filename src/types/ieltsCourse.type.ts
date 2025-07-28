@@ -39,13 +39,15 @@ export interface CtaText {
 
 export interface ISectionValue {
     background_color: string;
-    background_img: string;
+    image: string;
     checklist_text_color: string;
     end_at: string;  
     id: string;
     start_at: string; 
     template: string;
     text: string;
+    name:string;
+    description:string;
   }
   
   export interface Section {
