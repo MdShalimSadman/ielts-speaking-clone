@@ -1,0 +1,1 @@
+"use strict";exports.id=368,exports.ids=[368],exports.modules={7368:a=>{a.exports=JSON.parse('{"HomePage":{"ratings":"(81.8% শিক্ষার্থী কোর্স শেষে ৫ রেটিং দিয়েছেন)"}}')}};
