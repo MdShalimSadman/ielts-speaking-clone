@@ -1,1 +1,1 @@
-"use strict";exports.id=368,exports.ids=[368],exports.modules={87368:a=>{a.exports=JSON.parse('{"HomePage":{"instructor":"Course instructor","laid_out":"How the course is laid out","what_to_learn":"What you will learn by doing the course"}}')}};
+"use strict";exports.id=368,exports.ids=[368],exports.modules={87368:a=>{a.exports=JSON.parse('{"HomePage":{"instructor":"Course instructor","laid_out":"How the course is laid out","what_to_learn":"What you will learn by doing the course","course_details":"Course details","exclusive_feature":"Course Exclusive Feature"}}')}};
