@@ -42,7 +42,7 @@
       {
         "protocol": "https",
         "hostname": "^(?:^(?:s3\\.ap\\-southeast\\-1\\.amazonaws\\.com)$)$",
-        "pathname": "^(?:\\/images(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+        "pathname": "^(?:\\/cdn\\.10minuteschool\\.com\\/images(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
       }
     ],
     "unoptimized": false,

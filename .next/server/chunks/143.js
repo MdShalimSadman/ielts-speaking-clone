@@ -1,1 +1,1 @@
-"use strict";exports.id=143,exports.ids=[143],exports.modules={17143:a=>{a.exports=JSON.parse('{"HomePage":{"instructor":"কোর্স ইন্সট্রাক্টর","laid_out":"কোর্সটি যেভাবে সাজানো হয়েছে"}}')}};
+"use strict";exports.id=143,exports.ids=[143],exports.modules={17143:a=>{a.exports=JSON.parse('{"HomePage":{"instructor":"কোর্স ইন্সট্রাক্টর","laid_out":"কোর্সটি যেভাবে সাজানো হয়েছে","what_to_learn":"কোর্সটি করে যা শিখবেন"}}')}};
