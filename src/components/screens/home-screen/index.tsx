@@ -11,8 +11,6 @@ import ExclusiveFeatures from "./sections/exclusive-features/ExclusiveFeaturesIn
 import CourseFeaturesIndex from "./sections/course-features/CourseFeaturesIndex";
 import CourseDetailIndex from "./sections/course-detail/CourseDetailIndex";
 import SkeletonLoader from "@/utils/SkeletonLoader";
-import { Button } from "@/components/ui/button";
-import ChecklistSection from "./sections/course-card/CheckListSection";
 import Cta from "./sections/course-card/Cta";
 import ChecklistWrapper from "./sections/course-card/CheckListWrapper";
 

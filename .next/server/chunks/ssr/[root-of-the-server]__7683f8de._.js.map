@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///home/sadman/workspace/ielts-speaking-clone/src/providers/queryProvider.tsx"],"sourcesContent":["\"use client\"\n\nimport { QueryClient, QueryClientProvider } from \"@tanstack/react-query\"\nimport { type ReactNode, useState } from \"react\"\n\nexport default function QueryProvider({ children }: { children: ReactNode }) {\n  const [queryClient] = useState(() => new QueryClient())\n\n  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>\n}\n"],"names":[],"mappings":";;;;AAEA;AAAA;AACA;AAHA;;;;AAKe,SAAS,cAAc,EAAE,QAAQ,EAA2B;IACzE,MAAM,CAAC,YAAY,GAAG,CAAA,GAAA,qMAAA,CAAA,WAAQ,AAAD,EAAE,IAAM,IAAI,6KAAA,CAAA,cAAW;IAEpD,qBAAO,8OAAC,sLAAA,CAAA,sBAAmB;QAAC,QAAQ;kBAAc;;;;;;AACpD","debugId":null}}]
-}

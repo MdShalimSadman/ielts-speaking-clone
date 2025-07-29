@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
 import Gallery from "./Gallery";
-import ChecklistSection from "./CheckListSection";
 import { Checklist, Medium } from "@/types/ieltsCourse.type";
 import Cta from "./Cta";
 import ChecklistWrapper from "./CheckListWrapper";
