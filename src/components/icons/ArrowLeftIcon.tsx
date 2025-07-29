@@ -9,8 +9,8 @@ type ArrowLeftIconProps = {
 };
 
 const ArrowLeftIcon: React.FC<ArrowLeftIconProps> = ({
-  height = 25,
-  width = 25,
+  height = 30,
+  width = 30,
   className = "",
 }) => {
   return (
