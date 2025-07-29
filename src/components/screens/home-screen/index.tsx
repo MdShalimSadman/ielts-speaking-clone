@@ -4,12 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import { useTranslations, useLocale } from "next-intl";
 import { getIeltsCourse } from "@/services/api/ieltsCourse.api";
 import HeroBanner from "./sections/HeroBanner";
-import CourseIndex from "./sections/course-card";
+import CourseIndex from "./sections/course-card/CourseIndex";
 import InstructorSection from "./sections/InstructorSection";
 import WhatYouWillLearn from "./sections/WhatYouWillLearn";
-import ExclusiveFeatures from "./sections/exclusive-features";
-import CourseFeaturesIndex from "./sections/course-features";
-import CourseDetailIndex from "./sections/course-detail";
+import ExclusiveFeatures from "./sections/exclusive-features/ExclusiveFeaturesIndex";
+import CourseFeaturesIndex from "./sections/course-features/CourseFeaturesIndex";
+import CourseDetailIndex from "./sections/course-detail/CourseDetailIndex";
 
 const HomeIndex = () => {
   const t = useTranslations("HomePage");
