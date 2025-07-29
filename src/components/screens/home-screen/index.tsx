@@ -11,6 +11,10 @@ import ExclusiveFeatures from "./sections/exclusive-features/ExclusiveFeaturesIn
 import CourseFeaturesIndex from "./sections/course-features/CourseFeaturesIndex";
 import CourseDetailIndex from "./sections/course-detail/CourseDetailIndex";
 import SkeletonLoader from "@/utils/SkeletonLoader";
+import { Button } from "@/components/ui/button";
+import ChecklistSection from "./sections/course-card/CheckListSection";
+import Cta from "./sections/course-card/Cta";
+import ChecklistWrapper from "./sections/course-card/CheckListWrapper";
 
 const HomeIndex = () => {
   const t = useTranslations("HomePage");
@@ -58,6 +62,10 @@ const HomeIndex = () => {
 
       <div className="container flex flex-col gap-4 md:flex-row md:gap-12 mx-auto text-[#111827]">
         <div className="order-2 flex-1 md:order-1 md:max-w-[calc(100%_-_348px)] lg:max-w-[calc(100%_-_448px)] px-4 xl:px-0">
+          <div className="md:hidden">
+            <Cta price="৳1000" ctaText={course?.cta_text.name || ""} />
+            <ChecklistWrapper checklist={course?.checklist || []} />
+          </div>
           <InstructorSection
             instructors={
               course?.sections?.find(

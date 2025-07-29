@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import Gallery from "./Gallery";
 import ChecklistSection from "./CheckListSection";
 import { Checklist, Medium } from "@/types/ieltsCourse.type";
+import Cta from "./Cta";
+import ChecklistWrapper from "./CheckListWrapper";
 
 type Props = {
   galleryItems: Medium[];
@@ -17,16 +19,9 @@ const CourseIndex = ({ galleryItems, checklist, ctaText }: Props) => (
           <Gallery galleryItems={galleryItems} />
         </div>
         <div className="hidden md:block w-full p-4">
-          <p className="text-2xl font-semibold md:mb-3">৳1000</p>
-          <Button className="md:w-full bg-[#1cab55] text-white whitespace-nowrap cursor-pointer">
-            {ctaText}
-          </Button>
+          <Cta price="৳1000" ctaText={ctaText} />
+          <ChecklistWrapper checklist={checklist} />
         </div>
-        {!!checklist.length && (
-          <div className="hidden md:block">
-            <ChecklistSection checklist={checklist} />
-          </div>
-        )}
       </div>
     </div>
   </div>
