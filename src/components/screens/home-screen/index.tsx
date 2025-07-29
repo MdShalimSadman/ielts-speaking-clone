@@ -77,9 +77,8 @@ const HomeIndex = () => {
 
           <CourseFeaturesIndex
             items={
-              course?.sections?.find(
-                (section) => section.name === "How the course is laid out"
-              )?.values || []
+              course?.sections?.find((section) => section.type === "features")
+                ?.values || []
             }
             title={t("laid_out")}
           />
@@ -92,7 +91,7 @@ const HomeIndex = () => {
           <ExclusiveFeatures
             features={
               course?.sections?.find(
-                (section) => section.name === "Course Exclusive Feature"
+                (section) => section.type === "feature_explanations"
               )?.values || []
             }
             title={t("exclusive_feature")}
@@ -100,9 +99,8 @@ const HomeIndex = () => {
 
           <CourseDetailIndex
             details={
-              course?.sections?.find(
-                (section) => section.name === "Course details"
-              )?.values || []
+              course?.sections?.find((section) => section.type == "about")
+                ?.values || []
             }
             title={t("course_details")}
           />
