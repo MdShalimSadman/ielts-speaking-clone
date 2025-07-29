@@ -1,14 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import Gallery from "./course-card/Gallery";
+import { Medium } from "@/types/ieltsCourse.type";
 
 type Props = {
+  galleryItems: Medium[];
   title: string;
   description: string;
 };
 
-const HeroBanner = ({ title, description }: Props) => (
-  <div className="order-1 flex flex-col justify-center flex-1 md:order-1 md:max-w-[calc(100%_-_348px)] lg:max-w-[calc(100%_-_448px)]">
+const HeroBanner = ({ title, description, galleryItems }: Props) => (
+  <div className="order-1 flex flex-col justify-center flex-1 md:order-1 md:max-w-[calc(100%_-_348px)] lg:max-w-[calc(100%_-_448px)] px-4 xl:px-0">
+   <div className="md:hidden">
+   <Gallery galleryItems={galleryItems}/>
+   </div>
     <h1 className="text-white mb-2 text-xl font-semibold  md:text-4xl">
       {title}
     </h1>

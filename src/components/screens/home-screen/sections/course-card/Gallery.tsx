@@ -47,7 +47,7 @@ const Gallery = ({ galleryItems }: { galleryItems: Medium[] }) => {
       <Carousel
         opts={{ align: "start" }}
         setApi={handleSetCarouselApi}
-        className="w-full max-w-xl mx-auto"
+        className="w-full max-w-xl mx-auto mt-4 md:mt-0"
       >
         <CarouselContent>
           {galleryItems.map((item, index) => (

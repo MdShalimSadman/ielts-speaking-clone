@@ -35,6 +35,9 @@ const HomeIndex = () => {
       <HeroBanner
         title={course?.title || ""}
         description={course?.description || ""}
+        galleryItems={
+          course?.media?.filter((item) => item.name === "preview_gallery") || []
+        }
       />
       <CourseIndex
         galleryItems={
@@ -46,7 +49,7 @@ const HomeIndex = () => {
       </div>
       </div>
       <div className="container flex flex-col gap-4 md:flex-row md:gap-12 mx-auto text-[#111827]">
-        <div className="order-2 flex-1 md:order-1 md:max-w-[calc(100%_-_348px)] lg:max-w-[calc(100%_-_448px)]">
+        <div className="order-2 flex-1 md:order-1 md:max-w-[calc(100%_-_348px)] lg:max-w-[calc(100%_-_448px)] px-4 xl:px-0">
           <InstructorSection
             instructors={
               course?.sections?.find(

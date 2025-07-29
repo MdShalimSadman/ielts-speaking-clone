@@ -979,6 +979,10 @@
     padding-block: calc(var(--spacing) * 5);
   }
 
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
+  }
+
   .pt-0 {
     padding-top: calc(var(--spacing) * 0);
   }
@@ -1282,6 +1286,12 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:hidden {
+      display: none;
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:min-h-\[300px\] {
       min-height: 300px;
     }
@@ -1373,6 +1383,12 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:px-0 {
+      padding-inline: calc(var(--spacing) * 0);
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:px-5 {
       padding-inline: calc(var(--spacing) * 5);
     }
@@ -1426,6 +1442,12 @@
   @media (min-width: 64rem) {
     .lg\:max-w-\[calc\(100\%_-_448px\)\] {
       max-width: calc(100% - 448px);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:px-0 {
+      padding-inline: calc(var(--spacing) * 0);
     }
   }
 
